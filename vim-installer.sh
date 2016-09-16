@@ -2,7 +2,7 @@
 #!/bin/bash -e
 
 echo "install lua"
-sudo apt-get -y install liblua5.2-dev lua5.2
+sudo apt-get -y install liblua5.2-dev lua5.2 unzip htop 
 
 echo "download vim"
 
@@ -40,3 +40,20 @@ make install
 
 echo "alias vim=\"$HOME/usr/bin/vim\"" >> $HOME/.bashrc
 exec $SHELL -l
+
+git clone https://github.com/ieee0824/dotfiles.git $HOME/.dotfiles
+
+echo "install mysql tuner"
+mkdir -p $INSTALL_DIR/bin
+cd $INSTALL_DIR/bin
+wget -O mysqltuner.zip https://github.com/rackerhacker/MySQLTuner-perl/archive/master.zip
+unzip mysqltuner.zip
+rm mysqltuner.zip
+cd MySQLTuner-perl-master
+chmod +x mysqltuner.pl
+
+echo "mysql のバックアップをとる"
+echo "nginx のバックアップをとる"
+echo "アプリケーションのバックアップをとる"
+
+
