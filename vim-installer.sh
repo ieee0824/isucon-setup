@@ -33,7 +33,7 @@ echo "build vim"
  --enable-rubyinterp \
  --with-ruby-command=/usr/bin/ruby
 
-make
+make -j2
 ./src/vim --version | grep lua
 
 make install
