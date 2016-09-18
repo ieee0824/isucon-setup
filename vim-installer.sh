@@ -39,7 +39,6 @@ make -j2
 make install
 
 echo "alias vim=\"$HOME/usr/bin/vim\"" >> $HOME/.bashrc
-exec $SHELL -l
 
 git clone https://github.com/ieee0824/dotfiles.git $HOME/.dotfiles
 
